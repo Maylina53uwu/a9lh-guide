@@ -19,9 +19,11 @@ If you want to show me you succeded, you can send me a mail right here: maylina5
 
 # Summary
 
-- [Requirements](#requirements)
-- [Preparation](#preparation)
-- [Downgrade](#downgrade)
+- [Requirements](#prerequisites)
+- [Downgrade](#2-if-youre-running-a-recent-3ds-firmware-versions)
+- [Removing B9S](#3-removing-boot9strap)
+- [Installing A9LH](#4-getting-to-install-a9lh)
+- [Installing Luma](#5-installing-luma)
 
 # Prerequisites
 
