@@ -16,6 +16,13 @@ Alright, now that it's said, let's start for real.
 
 If you want to show me you succeded, you can send me a mail right here: maylina53uwu@gmail.com or just dm me on discord: maylina53_uwu
 (Or if you want help, but it's not likely that I'll answer, especially if you didn't follow the steps correctly.)
+
+# Summary
+
+- [Requirements](#requirements)
+- [Preparation](#preparation)
+- [Downgrade](#downgrade)
+
 # Prerequisites
 
 - Any console in the 3DS family running boot9strap (yes, it is be useful to have boot9strap installed, we'll just remove it afterwards.)
