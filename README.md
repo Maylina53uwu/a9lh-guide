@@ -1,109 +1,143 @@
-# a9lh-guide
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A9LH Guide - 2025 Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.cdnfonts.com/css/press-start-2p" rel="stylesheet">
+  <style>
+    body {
+      background: #000;
+      color: #0f0;
+      font-family: 'Press Start 2P', monospace;
+      padding: 20px;
+      font-size: 10px;
+      line-height: 1.8;
+    }
+    a { color: #0ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    h1, h2, h3 {
+      border-bottom: 1px dashed #0f0;
+      padding-bottom: 4px;
+      margin-top: 2em;
+    }
+    pre, code {
+      background: #111;
+      border: 1px solid #0f0;
+      padding: 4px;
+      display: block;
+      margin: 10px 0;
+      overflow-x: auto;
+    }
+    .warning {
+      border: 2px solid #f00;
+      background: #200;
+      padding: 10px;
+      color: #f55;
+      margin: 20px 0;
+    }
+    ul, ol { margin-left: 20px; }
+    li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
 
-A simple guide to install A9LH in 2025.
+  <h1>A9LH Guide - 2025 Edition</h1>
+  <p>A simple guide to install A9LH in 2025.</p>
+  <p>Note that my English isn't that good, I'm sorry if I make mistakes.</p>
+  <p>Alright, want to install A9LH on your 3DS for whatever reason? I gotcha.</p>
 
-Note that my english isn't that good, I'm sorry if I make mistakes.
+  <div class="warning">
+    <strong>IF YOU DO NOT KNOW WHAT YOU'RE DOING, GET THE FUCK OUT OF HERE</strong><br>
+    This guide is only intended for users who know what they are doing.<br>
+    I am not responsible if you brick your 3DS.
+  </div>
 
-Alright, want to install A9LH on your 3DS for whatever reason?
-I gotcha.
+  <div class="warning">
+    <strong>PLEASE, REALLY</strong><br>
+    I'm insisting. If you truly want CFW for daily use, go to <a href="https://3ds.hacks.guide">3ds.hacks.guide</a> and install boot9strap.
+  </div>
 
-# IF YOU DO NOT KNOW WHAT YOU'RE DOING, GET THE FUCK OUT
-- This guide is only intended for users who know what they are doing, I am not responsible if you brick your 3DS.
+  <p>If you want to show me you succeeded, you can email me: maylina53uwu@gmail.com or DM on Discord: maylina53_uwu<br>(No guarantee I’ll help if you didn’t follow instructions.)</p>
 
-# PLEASE, REALLY
-- I'm insisting, you should have a bit of knowledge. If you truly want CFW for daily use on your 3DS, just go to https://3ds.hacks.guide to install boot9strap and get out.
-Alright, now that it's said, let's start for real.
+  <h2>Summary</h2>
+  <ul>
+    <li><a href="#prerequisites">Requirements</a></li>
+    <li><a href="#downgrade">Downgrade</a></li>
+    <li><a href="#removing-b9s">Removing B9S</a></li>
+    <li><a href="#installing-a9lh">Installing A9LH</a></li>
+    <li><a href="#installing-luma">Installing Luma</a></li>
+  </ul>
 
-If you want to show me you succeded, you can send me a mail right here: maylina53uwu@gmail.com or just dm me on discord: maylina53_uwu
-(Or if you want help, but it's not likely that I'll answer, especially if you didn't follow the steps correctly.)
+  <h2 id="prerequisites">1. Prerequisites</h2>
+  <ul>
+    <li>Any 3DS family console running boot9strap (used to dump otp.bin, we'll remove it)</li>
+    <li>A few braincells</li>
+  </ul>
 
-# Summary
+  <h2>Required Files</h2>
+  <ul>
+    <li>Soundhax audio: <a href="http://soundhax.com">soundhax.com</a></li>
+    <li>otherapp: <a href="https://smealum.github.io/3ds/#otherapp">smealum.github.io</a></li>
+    <li>OTP.bin (dumped yourself, should be in /boot9strap/)</li>
+    <li>Luma v6.6: <a href="https://github.com/LumaTeam/Luma3DS/releases/download/v6.6/Luma3DSv6.6.7z">download</a></li>
+    <li>SafeA9LH Installer: <a href="https://github.com/AuroraWright/SafeA9LHInstaller/releases/tag/v2.6.7">download</a></li>
+    <li>Arm9LoaderHax: <a href="https://github.com/AuroraWright/arm9loaderhax/releases">download</a></li>
+    <li>udsploit: <a href="https://github.com/smealum/udsploit/releases/tag/1.0">download</a></li>
+    <li>safehax: <a href="https://github.com/TiniVi/safehax/releases/tag/r27">download</a></li>
+    <li>data_input_v4.zip (search for it manually, I can't provide it)</li>
+  </ul>
 
-- [Requirements](#prerequisites)
-- [Downgrade](#2-if-youre-running-a-recent-3ds-firmware-versions)
-- [Removing B9S](#3-removing-boot9strap)
-- [Installing A9LH](#4-getting-to-install-a9lh)
-- [Installing Luma](#5-installing-luma)
+  <h2 id="downgrade">2. Downgrade (if on newer firmware)</h2>
+  <p><strong>BACKUP EVERYTHING! (Also backup NAND with NANDManager as it'll let you do a full backup in case you horribly fuck up)</strong> Get firmware files for a version between 9.0.0 and 11.3(updates folder, not CTRTransfer) region and model SHOULD match (or you'll brick.).</p>
+  <ol>
+    <li>Put <code>updates</code> folder on SD root</li>
+    <li>Install sysUpdater CIA: <a href="https://github.com/profi200/sysUpdater/releases/tag/0.4.3b">download</a></li>
+    <li>Run and press Y to downgrade</li>
+  </ol>
+  <p><em>Alternate method (GodMode9):</em></p>
+  <ul>
+    <li>Go to GodMode9, press the HOME Button, go to More → System info to find original system version</li>
+    <li>Get matching <code>updates</code> folder</li>
+    <li>Uninstall all NAND titles via Title Manager (Press Home Button → Title Manager → NAND/TWL Titles</li>
+    <li>Go to SD, select every cia file (L+RIGHT) in sd/updates Press A → CIA Image options → Install image</li>
+    <li>Reboot and verify</li>
+  </ul>
 
-# Prerequisites
+  <h2 id="removing-b9s">3. Removing Boot9Strap</h2>
+  <p><strong>Make sure you haven't done a region change or use a custom keyboard!</strong></p>
+  <ol>
+    <li>Boot GodMode9</li>
+    <li>HOME → Scripts → GM9Megascript → Hax Options → Uninstall CFW</li>
+    <li>Follow prompts, reboot to stock</li>
+  </ol>
 
-- Any console in the 3DS family running boot9strap (yes, it is be useful to have boot9strap installed, we'll just remove it afterwards.)
-- A few braincells
+  <h2 id="installing-a9lh">4. Installing A9LH</h2>
+  <p>Place files:</p>
+  <ul>
+    <li>otherapp, soundhax, and boot.3dsx in root</li>
+    <li>udsploit + safehax in <code>/3ds/</code></li>
+    <li>SafeA9LHInstaller’s <code>arm9loaderhax.bin</code> in root</li>
+    <li><code>a9lh</code> OTP goes in root + merge data_input_v4's a9lh folder with the one on your sd</li>
+  </ul>
+  <p>Then:</p>
+  <ol>
+    <li>Boot HBL via SoundHax</li>
+    <li>Run udsploit → Start to exit</li>
+    <li>Run safehax → SafeA9LHInstaller appears</li>
+    <li>Press SELECT to install</li>
+    <li>Shutdown with any button, insert SD into PC</li>
+  </ol>
 
-# 1. Required files
+  <h2 id="installing-luma">5. Installing Luma</h2>
+  <ol>
+    <li>Replace installer <code>arm9loaderhax.bin</code> with Luma v6.6’s</li>
+    <li>Boot — you should see Luma config</li>
+    <li>Enable Autoboot SysNAND (if no EmuNAND)</li>
+    <li>Reboot — you're done!</li>
+  </ol>
 
-- The basic stuff that should go with your boot9strap installation (Luma, Godmode9)
-- Soundhax audio file (or any other entrypoint) -> http://soundhax.com
-- The otherapp.bin -> https://smealum.github.io/3ds/#otherapp
-- Your otp.bin, should be on /boot9strap/ if you dumped it, if you do not know how to dump it, get out, you're not supposed to be here
-- Luma v6.6 -> https://github.com/LumaTeam/Luma3DS/releases/download/v6.6/Luma3DSv6.6.7z
-- SafeA9LH Installer -> https://github.com/AuroraWright/SafeA9LHInstaller/releases/tag/v2.6.7
-- Arm9LoaderHax -> https://github.com/AuroraWright/arm9loaderhax/releases
-- udsploit -> https://github.com/smealum/udsploit/releases/tag/1.0
-- safehax -> https://github.com/TiniVi/safehax/releases/tag/r27
-- data_input_v4.zip (I can't provide a link here, please search for it yourself)
+  <p style="margin-top: 2em;">Guide by <a href="https://github.com/Maylina53uwu">Maylina53uwu</a> — A9LH lives on 👾</p>
 
-# 2. If you're running a recent 3DS firmware versions
-
-
-You'll need to downgrade your 3DS.
-BACKUP EVERYTHING!
-Get firmwares files for your 3ds. The region should match and the model too. It should be a updates folder with a bunch of cia files. THIS SHOULD NOT BE A CTRTRANSFER IMAGE
-Put the updates folder on the root
-Install SysUpdater (please use the cia) https://github.com/profi200/sysUpdater/releases/tag/0.4.3b
-Once install, run the app and hit Y to downgrade
-Wait a few minutes for the downgrade process to complete.
-Now reboot your console, if it boots, then it should have worked.
-
-I personally didn't use that method. If I said something wrong, I'm sorry. Here's what I did instead (
-
-- Go to GodMode9
-- Press HOME button Go to More -> System Info
-- If the original system version is below 9.0.0 or past 11.3 , you won't be able to use soundhax, and installing A9LH might not be possible. (or try to downgrade to a compatible version anyways, maybe it'll work, I might test by myself when I'll have time)
-- If your version is correct, download the firmware files for that exact version. Should be an 'updates' folder Make sure region and the model of your 3DS match.
-- Put this updates folder at the root of your SD card.
-- Boot into GodMode9
-- Go to Title Manager -> NAND / TWL Titles
-- Press L+Right to select everything, press A, select Manage Title -> Uninstall -> Uninstall Everthing. Do the key combo and wait. It's better if you dont relock permissions yet, as we still need them.
-- Then once done, go to sd/updates, Press L+Right to select everything, go to CIA options -> Install titles. There might be one title that doesn't install in the end, it's okay.
-- Reboot and check if it worked.
-
-# 3. Removing Boot9strap
-
-To make sure the A9LH install goes smoothly, we might want to remove boot9strap.
-
-First make sure you don't have a custom keyboard or made a region change. Because removing cfw will brick your console if it's not the case.
-Now, let's uninstall b9s!
-
-- Boot Into GodMode9
-- Press the HOME Button, go to Scripts -> GM9Megascript -> Hax Options -> Uninstall CFW
-- Confirm everything and do the key combo. You should now have cfw uninstalled. Now reboot, you should boot into stock firmware.
-
-# 4. Getting to install A9LH
-
-Now, place the required files on your SD Card this way:
-
-- Put the otherapp file in root (of course renaming it first)
-- Put the soundhax file in root
-- Put the boot.3dsx file in root
-- UDSPloit goes in the 3ds folder
-- Safehax goes in the 3ds folder
-- From the SafeA9LHInstaller zip, take the arm9loaderhax.bin file and put it in root
-- Put the contents of the release.7z file in the a9lh folder
-- Put your OTP.bin file in the a9lh folder
-- Merge the a9lh folder from data_input_v4.zip with the one on your SD card.
-
-Now, put the SD Card back in your 3DS and boot.
-Go to Soundhax (or whatever method you're using)
-On the HBL, launch udsploit. Press Start to quit
-Then, run safehax, you should get on the SafeA9LHInstaller
-Press Select to Install A9LH.
-Once finished, click any button to shutdown and put your SD Card back in your computer.
-
-# 5. Installing Luma
-
-From the Luma v6.6 zip, replace the arm9loaderhax.bin on the root of your SD card by the one in the zip file.
-Now try to boot with your SD Card, you should get on Luma Config.
-You might want to check Autoboot on SysNAND if you don't have an EmuNAND.
-
-Congrats! You now have installed A9LH on your system with Luma!
+</body>
+</html>
