@@ -71,7 +71,7 @@
 
   <h2 id="prerequisites">1. Prerequisites</h2>
   <ul>
-    <li>Any 3DS family console running boot9strap (we'll remove it)</li>
+    <li>Any 3DS family console running boot9strap (used to dump otp.bin, we'll remove it)</li>
     <li>A few braincells</li>
   </ul>
 
@@ -85,11 +85,11 @@
     <li>Arm9LoaderHax: <a href="https://github.com/AuroraWright/arm9loaderhax/releases">download</a></li>
     <li>udsploit: <a href="https://github.com/smealum/udsploit/releases/tag/1.0">download</a></li>
     <li>safehax: <a href="https://github.com/TiniVi/safehax/releases/tag/r27">download</a></li>
-    <li>data_input_v4.zip (search for it manually)</li>
+    <li>data_input_v4.zip (search for it manually, I can't provide it)</li>
   </ul>
 
   <h2 id="downgrade">2. Downgrade (if on newer firmware)</h2>
-  <p><strong>BACKUP EVERYTHING!</strong> Use firmware CIAs (not CTRTransfer) matching region + model.</p>
+  <p><strong>BACKUP EVERYTHING! (Also backup NAND with NANDManager as it'll let you do a full backup in case you horribly fuck up)</strong> Get firmware files for a version between 9.0.0 and 11.3(updates folder, not CTRTransfer) region and model SHOULD match (or you'll brick.).</p>
   <ol>
     <li>Put <code>updates</code> folder on SD root</li>
     <li>Install sysUpdater CIA: <a href="https://github.com/profi200/sysUpdater/releases/tag/0.4.3b">download</a></li>
@@ -97,10 +97,10 @@
   </ol>
   <p><em>Alternate method (GodMode9):</em></p>
   <ul>
-    <li>Use system info to find original version</li>
+    <li>Go to GodMode9, press the HOME Button, go to More → System info to find original system version</li>
     <li>Get matching <code>updates</code> folder</li>
-    <li>Uninstall all NAND titles via Title Manager</li>
-    <li>Install CIAs via sd/updates</li>
+    <li>Uninstall all NAND titles via Title Manager (Press Home Button → Title Manager → NAND/TWL Titles</li>
+    <li>Go to SD, select every cia file (L+RIGHT) in sd/updates Press A → CIA Image options → Install image</li>
     <li>Reboot and verify</li>
   </ul>
 
@@ -118,15 +118,15 @@
     <li>otherapp, soundhax, and boot.3dsx in root</li>
     <li>udsploit + safehax in <code>/3ds/</code></li>
     <li>SafeA9LHInstaller’s <code>arm9loaderhax.bin</code> in root</li>
-    <li><code>a9lh</code> folder with OTP + merged data_input_v4</li>
+    <li><code>a9lh</code> OTP goes in root + merge data_input_v4's a9lh folder with the one on your sd</li>
   </ul>
   <p>Then:</p>
   <ol>
     <li>Boot HBL via SoundHax</li>
-    <li>Run udsploit → Start</li>
+    <li>Run udsploit → Start to exit</li>
     <li>Run safehax → SafeA9LHInstaller appears</li>
     <li>Press SELECT to install</li>
-    <li>Shutdown, insert SD into PC</li>
+    <li>Shutdown with any button, insert SD into PC</li>
   </ol>
 
   <h2 id="installing-luma">5. Installing Luma</h2>
